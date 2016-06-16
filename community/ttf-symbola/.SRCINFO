@@ -1,0 +1,18 @@
+pkgbase = ttf-symbola
+	pkgdesc = Font for unicode symbols (part of Unicode Fonts for Ancient Scripts).
+	pkgver = 8.00
+	pkgrel = 1
+	url = http://users.teilar.gr/~g1951d/
+	install = ttf-symbola.install
+	arch = any
+	license = custom
+	makedepends = unzip
+	depends = fontconfig
+	depends = xorg-font-utils
+	source = http://users.teilar.gr/~g1951d/Symbola.zip
+	source = LICENSE
+	sha1sums = 705120ec73e8a0a142a76fccac041b5347c99b74
+	sha1sums = d5c6cf1db006cfee0e60897ce8bb54bd6611de75
+
+pkgname = ttf-symbola
+
