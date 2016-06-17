@@ -11,7 +11,7 @@ setup(
                 ],
         keywords='graddfil quantified.self',
         author='graddfil',
-        author_email='andr.tvorog@yandex.ru',
+        author_email='graddfril@openmailbox.org',
         url='https://github.com/graddfil/desktop-app',
         license='AGPLv3+',
         packages=find_packages(exclude=[]),
