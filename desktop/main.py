@@ -42,7 +42,7 @@ def login():
 
 def main():
     matrix = login()
-    response = matrix.send_message("!dppXJSqykoVCKXEPcO:matrix.org", "Hello from python SDK!")
+    matrix.send_message("!dppXJSqykoVCKXEPcO:matrix.org", "Hello from python SDK!")
 
 if __name__ == '__main__':
     main()
