@@ -25,7 +25,7 @@ class Graddfril:
         for name in ['server', 'room']:
             if name not in config or parser.parse_args().wipe:
                 config[name].set(input('Please specify %s:' % name))
-
+                open(config.user_config_path(), 'w').write(config.dump())
         self.server = config['server'].get()
         self.room = config['room'].get()
 
@@ -49,4 +49,4 @@ class Graddfril:
         self.token = config['token'].get()
 
     def send_message(self, data):
-        MatrixHttpApi(self.server, token=self.token).send_message(self.room, data)
+        print(MatrixHttpApi(self.server, token=self.token).send_message(self.room, data))
