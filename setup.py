@@ -25,6 +25,6 @@ setup(
                 ],
         entry_points={
                     'console_scripts': [
-                                    'graddfil = desktop-app.main:main',
+                        'graddfil = desktop.main:main',
                                 ],
                 })

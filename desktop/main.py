@@ -7,6 +7,7 @@ config = confuse.Configuration('graddfil')
 parser = argparse.ArgumentParser(description='Graddfil desktop app')
 parser.add_argument('--logout', dest='logout', action='store_true', default=False,
                     help='Logout from current user')
+
 server_url = "https://matrix.org"  # without '/'
 
 def get_token(username, password):
@@ -18,12 +19,12 @@ def get_token(username, password):
     else:
         raise NameError('Your password or login did\'t mutch')
 
-
 def login():
     '''
     Login user with token if there\s no token get username and password.
     Will return MatrixHttpApi
     '''
+
     # Check for token
     if 'token' not in config or parser.parse_args().logout:
         import getpass
@@ -44,4 +45,4 @@ def main():
     response = matrix.send_message("!dppXJSqykoVCKXEPcO:matrix.org", "Hello from python SDK!")
 
 if __name__ == '__main__':
-        main()
+    main()
