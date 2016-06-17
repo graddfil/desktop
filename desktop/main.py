@@ -1,4 +1,4 @@
-from config import Graddfril
+from configure import Graddfril
 
 
 def main():
