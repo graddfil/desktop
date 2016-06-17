@@ -4,6 +4,6 @@
 # Desktop client for graddfil
 ### Install
 ```
-pip install -e https://github.com/graddfril/desktop
+pip install https://github.com/graddfril/desktop
 graddfril
 ```
