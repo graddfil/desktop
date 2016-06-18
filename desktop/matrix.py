@@ -1,12 +1,4 @@
 from matrix_client.api import MatrixHttpApi
-import confuse
-import argparse
-
-config = confuse.Configuration('graddfil')
-parser = argparse.ArgumentParser(description='Graddfil desktop app')
-parser.add_argument('--clear-data', dest='wipe', action='store_true', default=False,
-                    help='Reset data. (server, token, room)')
-args = parser.parse_args()
 
 
 class MatrixClient:
@@ -26,7 +18,7 @@ class MatrixClient:
 
 
     @classmethod
-    def from_config(cls, config: confuse.Configuration):
+    def from_config(cls, config, args):
         '''
         We need to check configuration file.
         If room, host, token not in configuration file we ask to input them.
