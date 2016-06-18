@@ -21,7 +21,8 @@ class MatrixClient:
         self.room = room
 
 
-    def from_config(config: confuse.Configuration):
+    @classmethod
+    def from_config(cls, config: confuse.Configuration):
         '''
         We need to check configuration file.
         If room, host, token not in configuration file we ask to input them.
@@ -50,7 +51,7 @@ class MatrixClient:
 
         token = config['token'].get()
 
-        return MatrixClient(server, token, room)
+        return cls(server, token, room)
 
     def send_message(self, data):
         print(MatrixHttpApi(self.server, token=self.token).send_message(self.room, data))
