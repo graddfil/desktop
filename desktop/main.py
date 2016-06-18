@@ -6,8 +6,7 @@ from desktop.matrix import MatrixClient
 def main():
     config = confuse.Configuration('graddfril')
     parser = argparse.ArgumentParser(description='Graddfril grabber aggregator')
-    parser.add_argument('--clear-data', dest='wipe', action='store_true', default=False,
-                        help='Reset data. (server, token, room)')
+    parser.add_argument('--wipe', action='store_true', help='Reset data. (server, token, room)')
     args = parser.parse_args()
 
 
