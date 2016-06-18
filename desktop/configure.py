@@ -56,4 +56,4 @@ class MatrixClient:
         return cls(server, token, room)
 
     def send_message(self, data):
-        print(self.api.send_message(self.room, data))
+        return self.api.send_message(self.room, data)
