@@ -28,3 +28,10 @@ class MatrixClient:
 
     def send_event(self, event_type, content):
         return self.api.send_message_event(self.room, event_type, content)
+
+
+    @staticmethod
+    def get_token(server: str, user: str, password: str) -> str:
+        return MatrixHttpApi(server).login("m.login.password",
+                user=user,
+                password=password)
