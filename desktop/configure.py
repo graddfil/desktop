@@ -20,7 +20,9 @@ class MatrixClient:
         self.server = server
         self.token = token
         self.room = room
+
         self.api = MatrixHttpApi(self.server, token=self.token)
+        self.api.initial_sync()
 
 
     @classmethod
