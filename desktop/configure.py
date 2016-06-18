@@ -20,6 +20,7 @@ class MatrixClient:
         self.server = server
         self.token = token
         self.room = room
+        self.api = MatrixHttpApi(self.server, token=self.token)
 
 
     @classmethod
@@ -55,4 +56,4 @@ class MatrixClient:
         return cls(server, token, room)
 
     def send_message(self, data):
-        print(MatrixHttpApi(self.server, token=self.token).send_message(self.room, data))
+        print(self.api.send_message(self.room, data))
