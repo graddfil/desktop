@@ -1,5 +1,4 @@
 from matrix_client.api import MatrixHttpApi
-from matrix_client.api import MatrixRequestError
 import confuse
 import argparse
 
@@ -37,20 +36,17 @@ class MatrixClient:
 
         if 'token' not in config or parser.parse_args().wipe:
             import getpass
-            try:
 
-                login_information = MatrixHttpApi(server).login("m.login.password",
-                                                                     user=input("Please specify your username:"),
-                                                                     password=getpass.getpass())
-                if 'access_token' in login_information:
-                    config['token'].set(login_information['access_token'])
-                else:
-                    raise NameError("Your password or login did't much.")
+            login_information = MatrixHttpApi(server).login("m.login.password",
+                                                                 user=input("Please specify your username:"),
+                                                                 password=getpass.getpass())
+            if 'access_token' in login_information:
+                config['token'].set(login_information['access_token'])
+            else:
+                raise NameError("Your password or login did't much.")
 
-                # Save config.
-                open(config.user_config_path(), 'w').write(config.dump())
-            except MatrixRequestError:
-                print("Your password or username didn't match, please try again.")
+            # Save config.
+            open(config.user_config_path(), 'w').write(config.dump())
 
         token = config['token'].get()
 
