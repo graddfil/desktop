@@ -6,6 +6,7 @@ config = confuse.Configuration('graddfil')
 parser = argparse.ArgumentParser(description='Graddfil desktop app')
 parser.add_argument('--clear-data', dest='wipe', action='store_true', default=False,
                     help='Reset data. (server, token, room)')
+args = parser.parse_args()
 
 
 class MatrixClient:
@@ -29,13 +30,13 @@ class MatrixClient:
         '''
 
         for name in ['server', 'room']:
-            if name not in config or parser.parse_args().wipe:
+            if name not in config or args.wipe:
                 config[name].set(input('Please specify %s:' % name))
                 open(config.user_config_path(), 'w').write(config.dump())
         server = config['server'].get()
         room = config['room'].get()
 
-        if 'token' not in config or parser.parse_args().wipe:
+        if 'token' not in config or args.wipe:
             import getpass
 
             login_information = MatrixHttpApi(server).login("m.login.password",
